@@ -8,7 +8,6 @@ $quantity = $_POST['quantity'];
 $print_color = $_POST['print_color'];
 $board_type = $_POST['board_type'];
 $outside_paper = $_POST['outside_paper'];
-$name = $_POST['name'];
 $email = $_POST['email'];
 $grand_total = $_POST['grand_total'];
 $per_box_price = $_POST['per_box_price'];
