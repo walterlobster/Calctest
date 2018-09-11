@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="https://github.com/walterlobster/calc.git/cardboard-box-calculator-stylesheet.css">
+<link rel="stylesheet" href="https://box-calculations.scdpackaging.co.uk/cardboard-box-calculator-stylesheet.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 <style>
@@ -229,8 +229,8 @@
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Name</span>
                         <input class="calc-input form-control" id="tb_name" min="1" name="tb_name" type="text" placeholder="" />
-                        <span class="input-group-addon" id="basic-addon1">Email</span>
-                        <input class="calc-input form-control" id="tb_email" min="1" name="tb_email" type="email" placeholder="" />
+                        <span class="input-group-addon" id="basic-addon1">Your Email Address</span>
+                        <input class="calc-input form-control" id="tb_email" min="1" name="tb_email" type="email" placeholder="Email" />
                         <span class="input-group-btn">
                             <button class="btn btn-primary send-email" type="button">Send</button>
                         </span>
@@ -238,8 +238,7 @@
                 </div>
             </div>
         </div>
-    </div><br>
-	<hr>
+    </div>
 </div>
 <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -247,7 +246,7 @@
         crossorigin="anonymous">
 </script>
 
-<script>document.domain='https://github.com/walterlobster/calc.git';</script> 
+<script>document.domain='scdpackaging.co.uk';</script> 
 
 <script type="text/javascript">
     var MINIMUM = 100; //MINIMUM SIZE FOR ANY ONE PANEL
@@ -294,7 +293,6 @@
         var tb_length = jQuery("#tb_length").val();
         var tb_depth = jQuery("#tb_depth").val();
         var tb_email = jQuery("#tb_email").val();
-		var tb_name = jQuery("#tb_name").test();
         var tb_customer_qty = jQuery("#tb_qty").val();
         var tb_print_color = jQuery("input[name=tb_print-color]:checked").val();
         var tb_board = jQuery("input[name=tb_board]:checked").val();
@@ -306,8 +304,7 @@
 			price_with_vat	= 'Yes';
 		}
         if (isEmail(tb_email)) {
-
-		jQuery.ajax({
+            jQuery.ajax({
                 url: 'send_box_quote_mail.php',
                 data: {
                     height: tb_length,
@@ -317,7 +314,6 @@
                     print_color: tb_print_color,
                     board_type: tb_board,
                     outside_paper: tb_outside_paper,
-                    name: tb_name,
                     email: tb_email,
                     grand_total: grand_total,
                     per_box_price: per_box_price,
@@ -520,9 +516,9 @@
             GRAND_TOTAL = (((SINGLE_BOX_PRICE * QUANTITY) + TOTAL_PER_BOX_SURCHARGES) + parseInt(single_surcharge));
 //            GRAND_TOTAL = ((TOTAL_AREA + TOTAL_PER_BOX_SURCHARGES) + parseInt(single_surcharge));
             if (OUTER_PAPER == 'White') {
-                GRAND_TOTAL = GRAND_TOTAL * WHITE_PAPER_SURCHARGE *1.2;
+                GRAND_TOTAL = GRAND_TOTAL * WHITE_PAPER_SURCHARGE * 1.20;
             } else {
-                GRAND_TOTAL = GRAND_TOTAL * BROWN_PAPER_SURCHARGE *1.2;
+                GRAND_TOTAL = GRAND_TOTAL * BROWN_PAPER_SURCHARGE * 1.20;
             }
             $('.results-statement').html(
                     'To buy ' + QUANTITY + ' ' + LENGTH + ' x ' + WIDTH + ' x ' + DEPTH + ' boxes with ' +
@@ -576,5 +572,5 @@
 </script>
 
 <script>
-document.domain='https://github.com/walterlobster/calc.git';
+document.domain='scdpackaging.co.uk';
 </script>
