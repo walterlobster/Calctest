@@ -514,9 +514,9 @@
             GRAND_TOTAL = (((SINGLE_BOX_PRICE * QUANTITY) + TOTAL_PER_BOX_SURCHARGES) + parseInt(single_surcharge));
 //            GRAND_TOTAL = ((TOTAL_AREA + TOTAL_PER_BOX_SURCHARGES) + parseInt(single_surcharge));
             if (OUTER_PAPER == 'White') {
-                GRAND_TOTAL = GRAND_TOTAL * WHITE_PAPER_SURCHARGE * 1.20;
+                GRAND_TOTAL = GRAND_TOTAL * WHITE_PAPER_SURCHARGE;
             } else {
-                GRAND_TOTAL = GRAND_TOTAL * BROWN_PAPER_SURCHARGE * 1.20;
+                GRAND_TOTAL = GRAND_TOTAL * BROWN_PAPER_SURCHARGE;
             }
             $('.results-statement').html(
                     'To buy ' + QUANTITY + ' ' + LENGTH + ' x ' + WIDTH + ' x ' + DEPTH + ' boxes with ' +
