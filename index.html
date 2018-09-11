@@ -520,9 +520,9 @@
             GRAND_TOTAL = (((SINGLE_BOX_PRICE * QUANTITY) + TOTAL_PER_BOX_SURCHARGES) + parseInt(single_surcharge));
 //            GRAND_TOTAL = ((TOTAL_AREA + TOTAL_PER_BOX_SURCHARGES) + parseInt(single_surcharge));
             if (OUTER_PAPER == 'White') {
-                GRAND_TOTAL = GRAND_TOTAL * WHITE_PAPER_SURCHARGE;
+                GRAND_TOTAL = GRAND_TOTAL * WHITE_PAPER_SURCHARGE *1.2;
             } else {
-                GRAND_TOTAL = GRAND_TOTAL * BROWN_PAPER_SURCHARGE;
+                GRAND_TOTAL = GRAND_TOTAL * BROWN_PAPER_SURCHARGE *1.2;
             }
             $('.results-statement').html(
                     'To buy ' + QUANTITY + ' ' + LENGTH + ' x ' + WIDTH + ' x ' + DEPTH + ' boxes with ' +
@@ -546,8 +546,8 @@
 				pbp_raw_price	= parseFloat(jQuery("#per-box-price").text());
 				gt_raw_price	= parseFloat(jQuery("#grand-total").text());
 				if( jQuery(this).is(':checked') ){
-					pbp_final_price	= pbp_raw_price + ( pbp_raw_price*20/100 *1.2 );
-					gt_final_price	= gt_raw_price + ( gt_raw_price*20/100 *1.2 );
+					pbp_final_price	= pbp_raw_price + ( pbp_raw_price*20/100 );
+					gt_final_price	= gt_raw_price + ( gt_raw_price*20/100 );
 					
 					jQuery("#per-box-price").text(pbp_final_price.toFixed(2));
 					jQuery("#grand-total").text(gt_final_price.toFixed(2));
