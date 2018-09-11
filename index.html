@@ -546,8 +546,8 @@
 				pbp_raw_price	= parseFloat(jQuery("#per-box-price").text());
 				gt_raw_price	= parseFloat(jQuery("#grand-total").text());
 				if( jQuery(this).is(':checked') ){
-					pbp_final_price	= pbp_raw_price + ( pbp_raw_price*20/100 );
-					gt_final_price	= gt_raw_price + ( gt_raw_price*20/100 );
+					pbp_final_price	= pbp_raw_price + ( pbp_raw_price*20/100 *1.2 );
+					gt_final_price	= gt_raw_price + ( gt_raw_price*20/100 *1.2 );
 					
 					jQuery("#per-box-price").text(pbp_final_price.toFixed(2));
 					jQuery("#grand-total").text(gt_final_price.toFixed(2));
